@@ -1,0 +1,15 @@
+p, code {
+    line-height: 1.6em;
+}
+
+rect.rectColourFlow {
+     height: 100px;
+     width: 100px;
+     fill: #906bf5;
+}
+
+code {
+    font-family: "Operator SSm", sans serif;
+    font-size: 0.9em;
+    font-weight: 400;
+}

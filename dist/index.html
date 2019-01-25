@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Still Doing the D3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/normalize.56256789.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/style.e308ff8e.css">
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="/still_learning_d3.e31bb0bc.js"></script>
+
+<script src="/normalize.56256789.js"></script><script src="/style.e308ff8e.js"></script></head>
+
+<body class="avenir">
+
+    <article class="cf ph3 ph5-ns pv5">
+        <header class="fn fl-ns w-50-ns pr4-ns">
+            <h1 class="athelas f1 fw1 mb3 mt0 pt3 bt ">
+                Still Learning How to D3
+            </h1>
+            <time class="f7 ttu tracked gray">Why does this never end?</time>
+        </header>
+        <div class="fn fl-ns w-50-ns">
+            <p class="measure mt0-ns">Let's talk about selecting elements. D3 is actually pretty easy.<br>If
+                I want to select all the paragraphs and change them to an ugly blue, it's just <code>d3.selectAll("p").("color",
+                    "ugly-blue")</code></p>
+            <p class="blue pb5">Which would turn all the paragraphs to this. The brackets following the element
+                selector indicate the property and value you want to change.</p>
+            <p>We can also just select specfic paragraphs with <code>d3.select("p.specificClass").("font-weight","400")</code></p>
+            <p>Or, one more level down, select all the rectangles within a classed div, and then list a bunch of changes beneath it using the <code>.attr</code> tag.</p><code>d3.select('.dataChart').selectAll('rect')<br>
+            .attr('width', '70')<br>
+            .attr('height', '100')<br>
+            .attr('fill', 'lightblue');</code>
+
+                <svg class="pv4"><rect width="70" height="100" fill="lightblue"></rect></svg>
+
+            <p class="bt pt3 measure">
+                This is a square that randomly changes colour using a <code>Math.random()</code> function every time
+                the page renders. <i>Literal magic.</i></p>
+
+            <svg class="mv3">
+                <rect class="rectColourFlow"></rect>
+            </svg>
+
+            <div class="bt pt3 measure">
+                <h3 class="f3 ttu fw2 lh-copy">Turning Data Values into SVG Shapes</h3>
+                <p>
+                    From Shirley Wu's course <i>Introduction to Data Visualisation</i>
+                </p>
+                <svg class="dataChart mv3">
+                    <rect height="100" width="100" fill="#ff7b64"></rect>
+                    <rect height="100" width="100" fill="#ff7b64"></rect>
+                    <rect height="100" width="100" fill="#ff7b64"></rect>
+                    <rect height="100" width="100" fill="#ff7b64"></rect>
+                    <rect height="100" width="100" fill="#ff7b64"></rect>
+                </svg>
+
+            </div>
+
+            <div class="bt pt3 measure">
+                <h3 class="f4 ttu lh-copy">Let's figure out how to make transitions work ✨</h3>
+                <p>
+                    You last left off here: <a href="https://d3js.org">At the D3 docs for transitions</a>
+                </p>
+            </div>
+
+
+
+        </div>
+    </article>
+
+</body>
+
+
+</html>
