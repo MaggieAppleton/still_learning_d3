@@ -13,3 +13,32 @@ code {
     font-size: 0.9em;
     font-weight: 400;
 }
+
+.chartOne div {
+    font-size: 0.8em;
+    background-color: #fa854f;
+    text-align: right;
+    padding: 1em;
+    margin: 0.3em;
+    color: white;
+}
+
+.chartContainer {
+        padding: 2em;
+        max-width: 300px;
+        border: 1px solid rgb(197, 195, 216);
+        border-radius: 1em;
+}
+
+.scaledChart div {
+    background-color: #ec593f;
+    padding: 1em;
+    margin: 0.3em;
+    border-radius: 1em;
+}
+
+.silver {
+    color: rgb(152, 158, 175);
+    font-family: "Lora";
+    font-weight:100;
+}

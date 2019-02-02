@@ -16,11 +16,38 @@ function randomNumber() {
 console.log(randomNumber())
 
 d3.select('.dataChart').selectAll('rect')
-        .data(theData)
-        .attr('x', randomNumber)
-        .attr('y', randomNumber)
-        .attr('width', randomNumber)
-        .attr('height', randomNumber)
-        .attr('fill', 'lightblue');
+    .data(theData)
+    .attr('x', randomNumber)
+    .attr('y', randomNumber)
+    .attr('width', randomNumber)
+    .attr('height', randomNumber)
+    .attr('fill', 'lightblue');
 
-        // At this point all I've managed to do is decalre a random number and apply that to the attributes of the square. No idea how to get the data in a variable to map to the values of the square...
+// At this point all I've managed to do is decalre a random number and apply that to the attributes of the square. No idea how to get the data in a variable to map to the values of the square...
+
+// Notes from Scrimba's D3 Course
+
+var fudgeNumbers = [80, 111, 124, 189, 276]
+
+d3.select(".chartOne")
+    .selectAll('div')
+    .data(fudgeNumbers)
+        .enter()
+        .append('div')
+        .style('width', function(d) { return d+50 + "px"; })
+        .text(function(d) { return "I'm " + d + ' pixels'; });
+
+// Chart Two
+
+var cakeNumbers = [1320, 400, 560, 1780]
+
+// var scale = d3.scale.linear()
+//     .domain([min, max])
+//     .range([10, 300])
+
+d3.select(".chartContainer").select(".scaledChart")
+    .selectAll('div')
+    .data(cakeNumbers)
+        .enter()
+        .append('div')
+        .style('width', function(d) { return scale(d) + "px"; })
