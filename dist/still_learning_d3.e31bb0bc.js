@@ -27933,12 +27933,10 @@ d3.select(".chartOne").selectAll('div').data(fudgeNumbers).enter().append('div')
   return "I'm " + d + ' pixels';
 }); // Chart Two
 
-var cakeNumbers = [1320, 400, 560, 1780]; // var scale = d3.scale.linear()
-//     .domain([min, max])
-//     .range([10, 300])
-
+var cakeNumbers = [1320, 700, 940, 1780];
+var cakeScale = d3.scaleLinear().domain([400, 1800]).range([0, 220]);
 d3.select(".chartContainer").select(".scaledChart").selectAll('div').data(cakeNumbers).enter().append('div').style('width', function (d) {
-  return scale(d) + "px";
+  return cakeScale(d) + "px";
 });
 },{"d3":"node_modules/d3/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -27967,7 +27965,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52445" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50440" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

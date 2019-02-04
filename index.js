@@ -39,15 +39,15 @@ d3.select(".chartOne")
 
 // Chart Two
 
-var cakeNumbers = [1320, 400, 560, 1780]
+var cakeNumbers = [1320, 700, 940, 1780]
 
-// var scale = d3.scale.linear()
-//     .domain([min, max])
-//     .range([10, 300])
+var cakeScale = d3.scaleLinear()
+    .domain([400, 1800])
+    .range([0,220])
 
 d3.select(".chartContainer").select(".scaledChart")
     .selectAll('div')
     .data(cakeNumbers)
         .enter()
         .append('div')
-        .style('width', function(d) { return scale(d) + "px"; })
+        .style('width', function(d) { return cakeScale(d) + "px"; })

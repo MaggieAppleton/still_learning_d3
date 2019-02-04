@@ -31,23 +31,23 @@
           it's just <code>d3.selectAll("p").("color", "ugly-blue")</code>
         </p>
         <p class="blue pb5">
-          Which would turn all the paragraphs to this. The brackets following
-          the element selector indicate the property and value you want to
-          change.
+          Which would turn all the paragraphs to this ugly blue colours.<br>We first called <code>d3.selectAll</code> on the paragraphs in our code. Then after it, we declare the <code>(property, value)</code> that we want to change. 
         </p>
         <p>
           We can also just select specfic paragraphs with
-          <code>d3.select("p.specificClass").("font-weight","400")</code>
+          <code>d3.select("p.theClassName").("font-weight","400")</code>
         </p>
         <p>
           Or, one more level down, select all the rectangles within a classed
           div, and then list a bunch of changes beneath it using the
           <code>.attr</code> tag.
         </p>
-        <code>d3.select('.dataChart').selectAll('rect')<br>
-          .attr('width', '70')<br>
-          .attr('height', '100')<br>
-          .attr('fill', 'lightblue');</code>
+        <pre><code class="language-js">
+          d3.select('.dataChart').selectAll('rect')
+              .attr('width', '70')
+              .attr('height', '100')
+              .attr('fill', 'lightblue');
+              </code></pre>
 
         <svg class="pv4"><rect width="70" height="100" fill="lightblue"></rect></svg>
 
@@ -122,16 +122,35 @@
           <p>How to fit charts and graphs inside a limited amount of space on your page. Because datapoints don't always fit neatly into 400px.</p>
 
           <p>Luckily, we can use the <code>d3.scale</code> system.</p>
-          <p>To set up a scale we call</p>
+          <p>To set up a scale we call:</p>
             <pre><code class="language-js">
-                  var = scale = d3.scale.linear()
-                        .domain([0, 1800])
-                        .range([0, 280])
+                  var cakeNumbers = [1320, 700, 940, 1780]
+                  
+                  var cakeScale = d3.scaleLinear()
+                  .domain([400, 1800])
+                  .range([0,220])
               </code></pre>
+
+              <p>You can name the variable whatever you like, and then assign it to <code>d3.scaleLinear()</code>.<br> The domain is the min/mix numbers in your data set that you want to work within, and the range is the min/max size of your chart in pixels.</p>
 
           <div class="chartContainer">
               <div class="scaledChart"></div>
             </div>
+
+            <pre><code class="language-js">
+              d3.select(".chartContainer").select(".scaledChart")
+                  .selectAll('div')
+                      .data(cakeNumbers)
+                      .enter()
+                      .append('div')
+                      .style('width', function(d) { return cakeScale(d) + "px"; })
+              </code></pre>
+
+              <p>
+                To make this work, we select our empty <code>.scaledChart</code> div, and append our <code>cakeNumbers</code> data array. Then we enter it, append some divs, and in the <code>.style</code>
+                method, define the width as a function that returns the output of the <code>cakeScale</code> variable. The one we
+                assigned to the <code>d3.scaleLinear</code> function above.
+              </p>
             
         </div>
       </div>

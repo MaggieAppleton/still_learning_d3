@@ -25,7 +25,8 @@ code {
 
 .chartContainer {
         padding: 2em;
-        max-width: 300px;
+        margin: 2em auto;
+        max-width: 450;
         border: 1px solid rgb(197, 195, 216);
         border-radius: 1em;
 }
@@ -33,7 +34,7 @@ code {
 .scaledChart div {
     background-color: #ec593f;
     padding: 1em;
-    margin: 0.3em;
+    margin: 0.5em;
     border-radius: 1em;
 }
 
